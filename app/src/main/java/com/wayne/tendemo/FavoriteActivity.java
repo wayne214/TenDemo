@@ -1,9 +1,9 @@
 package com.wayne.tendemo;
 
-import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 public class FavoriteActivity extends AppCompatActivity {
 
@@ -11,21 +11,11 @@ public class FavoriteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("我的收藏");
-        }
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return true;
+    public void btnClick(View view) {
+        finish();
     }
 }

@@ -20,6 +20,7 @@ public class Diagram {
     public void parseObject(JSONObject object)
     {
         try {
+            publishtime=object.getString("publishtime");
             title=object.getString("title");
             author=object.getString("author");
             authorbrief=object.getString("authorbrief");

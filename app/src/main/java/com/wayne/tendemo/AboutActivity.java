@@ -1,36 +1,28 @@
 package com.wayne.tendemo;
 
-import android.app.ActionBar;
-import android.graphics.Paint;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
+import android.widget.ImageView;
 
-public class AboutActivity extends AppCompatActivity {
+import com.wayne.tendemo.Fragments.PersonalFragment;
+
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("关于十个");
-        }
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+        ImageView imageView= (ImageView) findViewById(R.id.about_back);
+        imageView.setOnClickListener(this);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
+    public void onClick(View v) {
                 finish();
-                break;
         }
-        return true;
     }
-}

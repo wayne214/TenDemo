@@ -25,9 +25,11 @@ public class Critic {
     private String realtitle;
     private String title;
     private String imageforplay;
+    private String publishtime;
     public void parsDetail(JSONObject object)
     {
         try {
+            publishtime=object.getString("publishtime");
             imageforplay=object.getString("imageforplay");
             author=object.getString("author");
             authorbrief=object.getString("authorbrief");

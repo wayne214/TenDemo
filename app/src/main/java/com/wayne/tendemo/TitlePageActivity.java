@@ -15,6 +15,8 @@ public class TitlePageActivity extends AppCompatActivity implements Animation.An
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_title_page);
+        android.support.v7.app.ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
         mImageView = (ImageView) findViewById(R.id.welcomo_img);
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.donghua);
         mImageView.startAnimation(animation);
@@ -30,6 +32,7 @@ public class TitlePageActivity extends AppCompatActivity implements Animation.An
     public void onAnimationEnd(Animation animation) {
         Intent it = new Intent(this, MainActivity.class);
         startActivity(it);
+        finish();
     }
 
     @Override

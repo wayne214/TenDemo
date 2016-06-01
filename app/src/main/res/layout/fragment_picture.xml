@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#fff"
         >
         <ImageView
             android:layout_width="wrap_content"
@@ -19,8 +18,9 @@
             />
         <TextView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:layout_weight="1"
+            android:background="#e2f8f8f8"
             />
         <LinearLayout
             android:layout_width="wrap_content"
@@ -31,11 +31,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/date_3"
+                android:id="@+id/date_day1"
                 />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/date_0"
+                android:id="@+id/date_day2"
                 />
             <LinearLayout android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
@@ -45,19 +47,45 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/week_1"
+                    android:id="@+id/date_week"
                     />
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/month_5"
-                    />
+                    android:orientation="horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/month_divide"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/month_5"
+                        android:id="@+id/date_month"
+                        />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <android.support.v4.view.ViewPager
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/diagram_viewPager"
-        ></android.support.v4.view.ViewPager>
-
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/diagram_viewPager"
+            ></android.support.v4.view.ViewPager>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/share_button"
+            android:layout_marginBottom="80dp"
+            android:layout_marginRight="10dp"
+            />
+    </FrameLayout>
 </LinearLayout>

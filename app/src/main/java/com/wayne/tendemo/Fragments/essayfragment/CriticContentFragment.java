@@ -1,6 +1,8 @@
 package com.wayne.tendemo.Fragments.essayfragment;
 
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,13 +18,10 @@ import com.wayne.mylibrary.NetworkTaskCallback;
 import com.wayne.tendemo.R;
 import com.wayne.tendemo.model.Critic;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,8 +30,10 @@ public class CriticContentFragment extends Fragment implements NetworkTaskCallba
     private  Critic mCritic;
     public static final String PICTURE_DISPLAY_URL = "http://api.shigeten.net/";
     public static final String MOVIE_DETATLS_URL = "http://api.shigeten.net/api/Critic/GetCriticContent?id=";
-    private ImageView imageforplay,img1,img2,img3,img4;
+    private ImageView imageforplay,img1,img2,img3,img4,loadImg;
     private TextView title,summary,autor,text2,text3,text4,text5,realtitle,times,authorbrief,autor_bottom;
+    private Drawable mDrawable;
+
     public CriticContentFragment() {
         // Required empty public constructor
     }
@@ -40,17 +41,12 @@ public class CriticContentFragment extends Fragment implements NetworkTaskCallba
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Bundle bundle=getArguments();
-//        String id=bundle.getString("id");
-//        NetworkTask task=new NetworkTask(getContext(),this);
-//        task.execute(MOVIE_DETATLS_URL+id);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,6 +56,15 @@ public class CriticContentFragment extends Fragment implements NetworkTaskCallba
         String id=bundle.getString("id");
         NetworkTask task=new NetworkTask(getContext(),this);
         task.execute(MOVIE_DETATLS_URL + id);
+        mDrawable = loadImg.getDrawable();
+        if (mDrawable != null) {
+            if(mDrawable instanceof AnimationDrawable)
+            {
+                AnimationDrawable drawable1= (AnimationDrawable) mDrawable;
+                drawable1.start();
+            }
+        }
+
         return view;
     }
     private void init()
@@ -94,6 +99,7 @@ public class CriticContentFragment extends Fragment implements NetworkTaskCallba
     }
     private  void initView(View view)
     {
+        loadImg= (ImageView) view.findViewById(R.id.load_img);
         imageforplay= (ImageView) view.findViewById(R.id.critic_imageforplay);
         img1= (ImageView) view.findViewById(R.id.critic_image1);
         img2= (ImageView) view.findViewById(R.id.critic_image2);
@@ -121,6 +127,7 @@ public class CriticContentFragment extends Fragment implements NetworkTaskCallba
                     mCritic=new Critic();
                     mCritic.parsDetail(jsonData);
                     init();
+                    loadImg.setVisibility(View.INVISIBLE);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

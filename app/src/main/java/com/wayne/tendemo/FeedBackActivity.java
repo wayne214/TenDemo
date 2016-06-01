@@ -15,11 +15,8 @@ public class FeedBackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_back);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("意见反馈");
-        }
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         text_weixin= (TextView) findViewById(R.id.weixinpublic);
         text_qq= (TextView) findViewById(R.id.qqpublic);
@@ -38,14 +35,7 @@ public class FeedBackActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return true;
+    public void btnBackClick(View view) {
+        finish();
     }
 }

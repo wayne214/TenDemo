@@ -18,6 +18,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener {
     private List<Fragment> mFragments;
     private android.support.v7.app.ActionBar actionBar;
+    public static RadioGroup mRadioGroup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +56,9 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
                 }
             }
         }
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.item_tab_bar);
-        if (radioGroup != null) {
-            radioGroup.setOnCheckedChangeListener(this);
+        mRadioGroup = (RadioGroup) findViewById(R.id.item_tab_bar);
+        if (mRadioGroup != null) {
+            mRadioGroup.setOnCheckedChangeListener(this);
         }
     }
 

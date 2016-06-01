@@ -7,14 +7,38 @@
     android:orientation="vertical"
     tools:context="com.wayne.tendemo.AboutActivity"
     >
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="100dp"
-        android:drawableTop="@mipmap/logo"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal"
-        android:text="\n每晚十点更新\n一篇影评 一篇文章\n每晚入睡前用上十分钟读到最新内容\n\n影评独特而温馨 文章兼顾见识与审美\n也许很长也许很短 但必定值得耐心阅读"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#d7d6d6"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/back"
+                android:id="@+id/about_back"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_ten"
+                android:textSize="20sp"
+                android:gravity="center"
+                />
+        </FrameLayout>
+    </LinearLayout>
+    <ImageView
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/about_us_bg"
+        />
+
 
 </LinearLayout>

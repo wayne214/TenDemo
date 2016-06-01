@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -14,11 +15,9 @@ public class FontSettingActivity extends AppCompatActivity implements RadioGroup
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_font_setting);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle("字体设置");
-        }
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         mRadioGroup= (RadioGroup) findViewById(R.id.fontseting_rg);
         mTextView= (TextView) findViewById(R.id.example_txt);
         mRadioGroup.setOnCheckedChangeListener(this);
@@ -39,14 +38,8 @@ public class FontSettingActivity extends AppCompatActivity implements RadioGroup
                 break;
         }
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        switch (id) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return true;
+
+    public void btnClick(View view) {
+        finish();
     }
 }

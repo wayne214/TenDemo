@@ -7,6 +7,31 @@
     android:orientation="vertical"
     tools:context="com.wayne.tendemo.FeedBackActivity"
     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#d7d6d6"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/back"
+                android:onClick="btnBackClick"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/feedback"
+                android:textSize="20sp"
+                android:gravity="center"
+                />
+        </FrameLayout>
+    </LinearLayout>
     <TextView
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
