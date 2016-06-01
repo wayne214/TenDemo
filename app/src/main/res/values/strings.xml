@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TenDemo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_favorite">我的收藏</string>
+    <string name="font_setting">字体设置</string>
+    <string name="about_ten">关于十个</string>
+    <string name="feedback">意见反馈</string>
+    <string name="login">点击用QQ登录</string>
+    <string name="weixinpublic">微信公众账号:</string>
+    <string name="qqpublic">QQ号:</string>
+</resources>

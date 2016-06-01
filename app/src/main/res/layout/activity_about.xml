@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wayne.tendemo.AboutActivity"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="100dp"
+        android:drawableTop="@mipmap/logo"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="\n每晚十点更新\n一篇影评 一篇文章\n每晚入睡前用上十分钟读到最新内容\n\n影评独特而温馨 文章兼顾见识与审美\n也许很长也许很短 但必定值得耐心阅读"/>
+
+</LinearLayout>

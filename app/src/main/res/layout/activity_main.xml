@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wayne.tendemo.MainActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/share_button"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="10dp"
+            />
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/item_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#000"
+        >
+
+        <com.wayne.tendemo.draw.MyRadioButton
+            android:id="@+id/item_tab_film"
+            style="@style/MainTabItem"
+            android:drawableTop="@drawable/selector_item_tab_film"
+            android:checked="true"
+            />
+
+        <com.wayne.tendemo.draw.MyRadioButton
+            android:id="@+id/item_tab_essay"
+            style="@style/MainTabItem"
+            android:drawableTop="@drawable/selector_item_tab_essay"
+            />
+
+        <com.wayne.tendemo.draw.MyRadioButton
+            android:id="@+id/item_tab_picture"
+            style="@style/MainTabItem"
+            android:drawableTop="@drawable/selector_item_tab_picture"
+            />
+
+        <com.wayne.tendemo.draw.MyRadioButton
+            android:id="@+id/item_tab_personal"
+            style="@style/MainTabItem"
+            android:drawableTop="@drawable/selector_item_tab_personal"
+            />
+    </RadioGroup>
+</LinearLayout>
